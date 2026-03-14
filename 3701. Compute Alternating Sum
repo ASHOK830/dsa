@@ -1,0 +1,32 @@
+###3701. Compute Alternating Sum
+
+class Solution:
+    def alternatingSum(self, nums: List[int]) -> int:
+        
+        odd=0
+        even=0
+        n=len(nums)
+        for i in range(n):
+            if i%2==0:
+                even=even+nums[i]
+            else:
+                odd=odd+nums[i]
+        Alt_sum=even-odd
+        return Alt_sum
+
+
+
+________or _______
+
+
+class Solution:
+    def alternatingSum(self, nums: List[int]) -> int:
+        alt_sum = 0
+
+        for i in range(len(nums)):
+            if i % 2 == 0:
+                alt_sum += nums[i]
+            else:
+                alt_sum -= nums[i]
+
+        return alt_sum
