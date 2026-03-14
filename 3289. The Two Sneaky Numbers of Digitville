@@ -1,0 +1,28 @@
+#3289. The Two Sneaky Numbers of Digitville
+
+class Solution:
+    def getSneakyNumbers(self, nums: List[int]) -> List[int]:
+        
+        duplicates = set()
+
+        for i in nums:
+            if nums.count(i) > 1:
+                duplicates.add(i)
+        li=list(duplicates)
+        return li
+
+
+____________or _______________
+
+class Solution:
+    def getSneakyNumbers(self, nums: List[int]) -> List[int]:
+        
+        c=[]
+        dup=[]
+        for i in range(len(nums)):
+            if nums[i] in c and  nums[i] not in dup:
+                dup.append(nums[i])
+            else:
+                c.append(nums[i])
+        li=list(dup)
+        return dup
