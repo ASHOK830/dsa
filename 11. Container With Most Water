@@ -1,0 +1,20 @@
+#11. Container With Most Water
+#using two pointer
+
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        li=[]
+        n=len(height)
+        width=0
+        left=0
+        right=n-1
+        while  left < right :
+            Width=right-left
+            Min_Height= min(height[right], height[left])
+            Area=Width*Min_Height
+            li.append(Area)
+            if height[left]< height[right]:
+                left+=1
+            else:
+                right-=1
+        return max(li)
