@@ -1,0 +1,26 @@
+
+
+
+
+#1769. Minimum Number of Operations to Move All Balls to Each
+class Solution:
+    def minOperations(self, boxes: str) -> List[int]:
+       
+        list(boxes)
+        li=[]
+
+
+        for i in range(len(boxes)):
+    
+            ans=0
+            for  j in range(len(boxes)):
+            
+                if boxes[j]=="1":
+                    x=abs(i-j)
+                    ans=ans+x
+            li.append(ans)
+        return li
+
+#here  we want find "1"  then we can identify the  index i -index j =give  the no opf pass requred
+and 0 is not calculate as a move  we don"t want add 0 to boxes thats y we use the if box i==0 
+
