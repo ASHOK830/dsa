@@ -1,0 +1,15 @@
+#2433. Find The Original Array of Prefix Xor
+
+
+class Solution:
+    def findArray(self, pref: List[int]) -> List[int]:
+        li=[]
+
+        for i in range(len(pref)):
+            if i==0:
+                li.append(pref[i])
+            else:
+                x=pref[i]^pref[i-1]
+                li.append(x)
+
+        return li
