@@ -1,5 +1,32 @@
 #2574. Left and Right Sum Differences
 
+#using  prefix_sum concept:-
+
+
+class Solution:
+    def leftRightDifference(self, nums: List[int]) -> List[int]:
+
+
+        leftsum=0
+        total_sum=sum(nums)
+        ans=[]
+
+        for i in range(len(nums)):
+            rightsum=total_sum-leftsum-nums[i]
+            ans.append(abs(leftsum-rightsum))
+            leftsum= leftsum+nums[i]
+        return ans
+
+
+
+
+
+
+
+
+
+
+#normal  bruitforce :-
 class Solution:
     def leftRightDifference(self, nums: List[int]) -> List[int]:
 
