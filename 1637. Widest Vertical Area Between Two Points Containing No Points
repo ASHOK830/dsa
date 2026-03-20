@@ -1,0 +1,17 @@
+#1637. Widest Vertical Area Between Two Points Containing No Points
+
+
+class Solution:
+    def maxWidthOfVerticalArea(self, points: List[List[int]]) -> int:
+        x_val=[]
+        max_gap=0 #[]
+        for p in points:
+            x_val.append(p[0])
+        x_val.sort()
+        for i  in range(len(x_val)-1):
+            gap=abs(x_val[i]-x_val[i+1])
+            #max_gap.append(abs(x_val[i]-x_val[i+1]))
+            if gap>max_gap:
+                max_gap=gap
+    
+        return max_gap
