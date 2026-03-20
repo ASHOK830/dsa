@@ -1,0 +1,13 @@
+#2037. Minimum Number of Moves to Seat Everyone
+
+
+class Solution:
+    def minMovesToSeat(self, seats: List[int], students: List[int]) -> int:
+        seats.sort()
+        ans=0
+        students.sort()
+        n=len(students)
+        for i in range(n):
+            ans=ans+(abs(seats[i]-students[i]))
+        
+        return ans
