@@ -1,0 +1,26 @@
+#strings
+#3541. Find Most Frequent Vowel and Consonant
+
+class Solution:
+    def maxFreqSum(self, s: str) -> int:
+        vowels="aeiou"
+        max_vol_count=0
+        max_con_count=0
+        for i in set(s):
+            count=s.count(i)
+            if i in vowels:
+                max_vol_count=max(max_vol_count,count)
+            else:
+                max_con_count=max(max_con_count, count)
+
+        result=max_con_count+max_vol_count
+        return result
+
+
+
+#######TEST CASE######
+Input: s = "successes"
+
+Output: 6
+here count the no vowels and consonents 
+and there addition gives output
