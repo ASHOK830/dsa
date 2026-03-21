@@ -1,0 +1,16 @@
+#strings
+#3794. Reverse String Prefix
+
+class Solution:
+    def reversePrefix(self, s: str, k: int) -> str:
+        first_part=""
+        for i  in range(k-1,-1,-1):
+            first_part+=s[i]
+        return first_part+s[k:]
+
+
+
+
+#Input: s = "abcd", k = 2
+
+#Output: "bacd"
