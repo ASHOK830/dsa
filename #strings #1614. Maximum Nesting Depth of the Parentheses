@@ -1,0 +1,26 @@
+#strings
+#1614. Maximum Nesting Depth of the Parentheses
+
+class Solution:
+    def maxDepth(self, s: str) -> int:
+        li=list(s)
+
+        max_count=0
+        count=0
+        for i in range(len(li)):
+            if li[i]=="(":
+                count+=1
+                max_count=max(max_count, count)# here i am finding the depth using count
+            if li[i]==")":
+                count-=1
+                max_count=max(max_count, count)
+        return max_count
+
+
+#######TEST CASE######
+Input: s = "(1+(2*3)+((8)/4))+1"
+
+Output: 3
+#####EXPLINATION#####
+here mainly i am finding the Depth  using count if it is"(" it "+1" if it is "(" it is "-1" 
+where it reach  max val  of "(" i will save in max_val  in is the depth of total expression
