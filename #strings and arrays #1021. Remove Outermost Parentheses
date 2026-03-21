@@ -1,0 +1,51 @@
+#strings and arrays
+#1021. Remove Outermost Parentheses
+
+
+class Solution:
+    def removeOuterParentheses(self, s: str) -> str:
+
+            
+            ans=""
+            count=0
+            for i in s:
+                if i=="(":
+                    count+=1
+                    if count > 1 :
+                        ans+=i
+                if i==")":
+                    count-=1
+                    if count >0 :
+                        ans+=i
+            
+            return ans
+
+
+
+
+"""
+v=list(s)
+li=[]
+count=0
+for i in range(len(v)):
+    if v[i]=="(":
+        count+=1
+        if count > 1 :
+            li.append(v[i])
+    if v[i]==")":
+        count-=1
+        if count >0 :
+            li.append(v[i])
+result=" ".join(li)
+return result"""
+
+#########test case######
+Input: s = "(()())(())"
+Output: "()()()"
+####Explanation: ####
+here this problem same as 
+#1614 problem here also find the Depth and remove the Depth or count=1 and and itb is "(" and Depth=0 or > 0 and it is ")" negenate them so it help
+if still not catch the logic "https://youtu.be/RCAC4uxBRMk?si=HzeI0nj81fCwWT4R"
+
+
+
