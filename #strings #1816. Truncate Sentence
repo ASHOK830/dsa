@@ -1,0 +1,25 @@
+#strings
+#1816. Truncate Sentence
+
+class Solution:
+    def truncateSentence(self, s: str, k: int) -> str:
+        words=s.split()
+
+        word=words[:k]
+        return " ".join(word)
+        
+        
+        
+        """for i in range(len(word)):
+    if i<4:
+        print(i,word[i], end=" ")"""
+
+
+##TEST CASE####
+Input: s = "Hello how are you Contestant", k = 4
+Output: "Hello how are you"
+
+
+####Explination####
+is i am dealing the string as list using "split" it helps to  devide the sentence in to words like as list the indexin will be seperated 
+so i just print my requires index"k"
