@@ -1,0 +1,10 @@
+#strings
+#1678. Goal Parser Interpretation
+
+
+class Solution:
+    def interpret(self, command: str) -> str:
+        data=command.replace("()","o")
+
+        result=data.replace("(al)", "al")
+        return result
