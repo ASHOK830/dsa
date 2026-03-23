@@ -1,0 +1,24 @@
+#strings
+#3280. Convert Date to Binary
+
+class Solution:
+    def convertDateToBinary(self, date: str) -> str:
+
+        x = date.split("-")
+        li = []
+        for i in range(len(x)):
+            li.append(format(int(x[i]), "b"))  
+            result = "-".join(li)
+        return result
+
+
+
+#######test case####
+Input: date = "2080-02-29"
+
+Output: "100000100000-10-11101"
+
+####explination###
+here i convert the date to simple parts "2080""02" " 29" by using (split())
+ after i use for loop and convert the x[i] into binaryb using (format()) it  i specxifed that  convert into binaryb using"b" 
+and  again convert in to  string and jopining with "-"  
