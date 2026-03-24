@@ -1,0 +1,29 @@
+#strings
+#1221. Split a String in Balanced Strings
+
+class Solution:
+    def balancedStringSplit(self, s: str) -> int:
+        count_L=0
+        count_R=0
+        count=0
+        li=[]
+        for i in s:
+            if i=="R":
+                count_R+=1
+            else:
+                count_L+=1
+            if count_R==count_L:
+                              '''# ans=("R"*count_R)+("L"*count_L)
+                                  #    li.append(ans)
+                                   #   count_L=0
+                                    #  count_R=0'''
+                count+=1
+    
+        return count
+
+
+####TEST CASE###
+Input: s = "RLRRLLRLRL"
+Output: 4
+Explanation: s can be split into "RL", "RRLL", "RL", "RL", each substring contains same number of 'L' and 'R'.
+
