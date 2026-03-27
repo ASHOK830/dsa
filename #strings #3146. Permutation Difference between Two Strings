@@ -1,0 +1,17 @@
+#strings
+#3146. Permutation Difference between Two Strings
+
+
+
+class Solution:
+    def findPermutationDifference(self, s: str, t: str) -> int:
+        
+        ans=0
+        for i in range(len(s)):
+            ans=ans+(abs(s.index(s[i])-t.index(s[i])))
+        return ans
+
+# test case###
+Input: s = "abc", t = "bac"
+
+Output: 2
