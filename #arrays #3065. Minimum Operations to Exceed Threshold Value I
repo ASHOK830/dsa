@@ -1,0 +1,15 @@
+#arrays
+#3065. Minimum Operations to Exceed Threshold Value I
+
+class Solution:
+    def minOperations(self, nums: List[int], k: int) -> int:
+        count=0
+        while min(nums) < k :
+            nums.remove(min(nums))
+            count=count+1
+        return count
+
+###test case
+Input: nums = [1,1,2,4,9], k = 1
+Output: 0
+Explanation: All elements of the array are greater than or equal to 1 so we do not need to apply any operations on nums.
