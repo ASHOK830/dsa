@@ -1,0 +1,29 @@
+
+#arrays
+#2125. Number of Laser Beams in a Bank
+
+
+
+class Solution:
+    def numberOfBeams(self, bank: List[str]) -> int:
+        
+
+
+            l2=[]
+            li=[]
+            for i in range(len(bank)):
+                if "1" in bank[i]: 
+                    x=bank[i].count("1")
+                    li.append(x)
+            
+
+
+            for i in range(len(li)-1):
+                ans=li[i] * li[i+1]
+                l2.append(ans)
+            return sum(l2)
+
+
+#test case
+Input: bank = ["011001","000000","010100","001000"]
+Output: 8
