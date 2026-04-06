@@ -1,0 +1,24 @@
+#arrays
+#3427. Sum of Variable Length Subarrays
+
+
+
+class Solution:
+    def subarraySum(self, nums: List[int]) -> int:
+        
+        li=[]
+        for i in range(len(nums)):
+            start=max(0,i-nums[i])
+            li.append(sum(nums[start:i+1]))
+        
+
+        return sum(li)
+
+
+
+
+#ttest case
+
+Input: nums = [2,3,1]
+
+Output: 11
