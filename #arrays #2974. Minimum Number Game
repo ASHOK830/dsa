@@ -1,0 +1,23 @@
+#arrays
+#2974. Minimum Number Game
+
+class Solution:
+    def numberGame(self, nums: List[int]) -> List[int]:
+
+ 
+        li=[]
+        nums.sort()
+        n=len(nums)
+        for i in range(0,n,2):
+            a=nums[i]
+            b=nums[i+1]
+    
+            li.append(b)
+            li.append(a)
+        return li
+
+#test case
+Input: nums = [5,4,2,3]
+Output: [3,2,5,4]
+Explanation: In round one, first Alice removes 2 and then Bob removes 3. Then in arr firstly Bob appends 3 and then Alice appends 2. So arr = [3,2].
+At the begining of round two, nums = [5,4]. Now, first Alice removes 4 and then Bob removes 5. Then both append in arr which becomes [3,2,5,4].
