@@ -1,0 +1,14 @@
+#arrays
+#2859. Sum of Values at Indices With K Set Bits
+
+
+class Solution:
+    def sumIndicesWithKSetBits(self, nums: List[int], k: int) -> int:
+        
+ 
+        ans=0 
+        for i in range(len(nums)):
+
+             if format(i,"b").count("1")==k:
+                ans+=nums[i]
+        return ans
