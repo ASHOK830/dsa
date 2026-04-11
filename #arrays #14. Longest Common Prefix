@@ -1,0 +1,21 @@
+
+#arrays
+#14. Longest Common Prefix
+
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+
+
+        strs.sort()
+        word = strs[0]
+        last = strs[-1]
+
+        result = []
+
+        for i in range(min(len(word), len(last))):
+            if word[i] == last[i]:
+                result.append(word[i])
+            else:
+                break
+
+        ans="".join(result)
