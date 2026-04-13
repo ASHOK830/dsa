@@ -1,0 +1,18 @@
+#strings
+#2185. Counting Words With a Given Prefix
+
+class Solution:
+    def prefixCount(self, words: List[str], pref: str) -> int:
+        
+        x=len(pref)
+        count=0
+        for word in words:
+            if pref==word[ : x]:
+                count+=1
+        return count
+
+
+#test case
+Input: words = ["pay","attention","practice","attend"], pref = "at"
+Output: 2
+Explanation: The 2 strings that contain "at" as a prefix are: "attention" and "attend".
