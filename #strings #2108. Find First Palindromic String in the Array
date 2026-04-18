@@ -1,0 +1,19 @@
+#strings
+#2108. Find First Palindromic String in the Array
+
+class Solution:
+    def firstPalindrome(self, words: List[str]) -> str:
+        
+        result=""
+        for i in range(len(words)):
+            
+            if words[i]==words[i][ : :-1]:
+                result=words[i]
+                break
+        return result
+
+
+#test case
+Input: words = ["notapalindrome","racecar"]
+Output: "racecar"
+Explanation: The first and only string that is palindromic is "racecar".
