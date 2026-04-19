@@ -1,0 +1,19 @@
+
+#strings
+#2418. Sort the People
+
+class Solution:
+    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+        
+
+        x=list(zip( heights,names))
+        x.sort(reverse=True)
+        result=[]
+        for h,n in x:
+            result.append(n)
+        return result
+
+#test case
+
+Input: names = ["Mary","John","Emma"], heights = [180,165,170]
+Output: ["Mary","Emma","John"]
