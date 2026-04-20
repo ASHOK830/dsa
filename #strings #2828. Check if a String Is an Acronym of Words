@@ -1,0 +1,22 @@
+#strings
+#2828. Check if a String Is an Acronym of Words
+
+
+class Solution:
+    def isAcronym(self, words: List[str], s: str) -> bool:
+        
+        
+        
+        if len(s)!=len(words):
+            return False
+         
+        for  i, word in enumerate(words):
+            if word[0]!=s[i]:
+                return False
+                    
+        return True
+
+#test case
+Input: words = ["alice","bob","charlie"], s = "abc"
+Output: true
+Explanation: The first character in the words "alice", "bob", and "charlie" are 'a', 'b', and 'c', respectively. Hence, s = "abc" is the acronym. 
