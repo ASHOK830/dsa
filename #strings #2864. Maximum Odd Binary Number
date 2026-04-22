@@ -1,0 +1,23 @@
+#strings
+#2864. Maximum Odd Binary Number
+
+class Solution:
+    def maximumOddBinaryNumber(self, s: str) -> str:
+        ones = s.count('1')
+        zeros = len(s)-ones
+        
+        return  '1' * (ones - 1) + '0' * zeros + '1'
+
+
+#test case
+
+Example 1:
+
+Input: s = "010"
+Output: "001"
+Explanation: Because there is just one '1', it must be in the last position. So the answer is "001".
+Example 2:
+
+Input: s = "0101"
+Output: "1001"
+Explanation: One of the '1's must be in the last position. The maximum number that can be made with t
