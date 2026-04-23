@@ -1,0 +1,28 @@
+#strings
+#3340. Check Balanced String
+
+class Solution:
+    def isBalanced(self, num: str) -> bool:
+        even=0
+        odd=0
+        
+        for   i in range(len(num)):
+    
+            if i%2==0:
+                even+=int(num[i])
+            else:
+                odd+=int(num[i])
+
+        if even==odd:
+            return True
+        return False
+
+
+#test case
+Input: num = "24123"
+
+Output: true
+
+Explanation:
+
+The sum of digits at even indices is 2 + 1 + 3 == 6, and the sum of digits at odd indices is 4 + 2 == 6.
