@@ -1,0 +1,14 @@
+#Strings
+#3174. Clear Digits
+
+class Solution:
+    def clearDigits(self, s: str) -> str:
+        stack=[]
+        for i in range(len(s)):
+            if s[i].isalpha():
+                stack.append(s[i])
+            elif s[i].isdigit():
+                if stack:
+                    stack.pop()
+
+        return "".join(stack)
