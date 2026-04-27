@@ -18,7 +18,24 @@ class Solution:
 
         return result 
 
-#test case
+
+#####second method########################
+
+l1=[]
+l2=[]
+result=[]
+for i in range(len(nums)):
+    if nums[i]< 0:
+        l1.append(nums[i])
+    else:
+        l2.append(nums[i])
+for i in range(len(l1)):
+    result.append(l2[i])
+    result.append(l1[i])
+print(result )
+
+######test case ####
+
 Input: nums = [3,1,-2,-5,2,-4]
 Output: [3,-2,1,-5,2,-4]
 Explanation:
