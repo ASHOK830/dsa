@@ -1,0 +1,36 @@
+
+#twopointers
+#832. Flipping an Image
+
+for row in image:
+    left = 0
+    right = len(row) - 1
+    
+    while left <= right:
+        # swap + flip
+        row[left], row[right] = 1 - row[right], 1 - row[left]
+        #here the 0is change into 1 by {1-i) 
+        left += 1
+        right -= 1
+
+print(image)
+
+######or ###
+        li=[]
+        for i in range(len(image)):
+            li.append(image[i][::-1])
+        for j in range(len(li)):
+            for x in range(len(li[j])):
+                if li[j][x]==0:
+                    li[j][x]=1
+                else:
+                    li[j][x]=0
+        return li
+
+
+#test case
+
+Input: image = [[1,1,0],[1,0,1],[0,0,0]]
+Output: [[1,0,0],[0,1,0],[1,1,1]]
+Explanation: First reverse each row: [[0,1,1],[1,0,1],[0,0,0]].
+Then, invert the image: [[1,0,0],[0,1,0],[1,1,1]]
