@@ -1,0 +1,23 @@
+#twopointers
+#3194. Minimum Average of Smallest and Largest Elements
+
+
+class Solution:
+    def minimumAverage(self, nums: List[int]) -> float:
+        
+        nums.sort()
+        n=len(nums)
+        avg=[]
+        left=0
+        right=n-1
+        for  i in  range(n):
+            x=(nums[left]+nums[right])/2
+            avg.append(x)
+            left+=1
+            right-=1
+        return min(avg)
+
+#test case
+Input: nums = [7,8,3,4,15,13,4,1]
+
+Output: 5.5
