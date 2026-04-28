@@ -1,0 +1,52 @@
+#twopointers
+#345. Reverse Vowels of a String
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        s=list(s)
+        ovel=["a", "e","i","o","u"]
+        left=0
+        right=len(s)-1
+        while left <= right:
+    
+            if s[left].lower() in ovel:
+                if s[right].lower() in ovel:
+                    s[left],s[right]=s[right],s[left]
+                    left+=1
+                    right-=1
+                else:
+                    right-=1
+            else:
+                left+=1
+    
+        return "".join(s)  
+
+
+# Another ###
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        s=list(s)
+        ovel=["a", "e","i","o","u"]
+        left=0
+        right=len(s)-1
+        while left <= right:
+    
+            if s[left].lower()  not in ovel:
+                left+=1
+            elif s[right].lower() not  in ovel:
+                right-=1
+            else:
+                s[left],s[right]=s[right],s[left]
+                left+=1
+                right-=1
+               
+                    
+            
+                
+    
+        return "".join(s)  
+
+
+#test case
+Input: s = "IceCreAm"
+
+Output: "AceCreIm"
