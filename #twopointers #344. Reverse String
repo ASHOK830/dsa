@@ -1,0 +1,22 @@
+
+#twopointers
+#344. Reverse String
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        n=len(s)-1
+        for i in range(0,(n//2)+1):
+            temp=s[i]
+            s[i]=s[n-i]
+            s[n-i]=temp
+
+
+#tese case
+Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+Example 2:
+
+Input: s = ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
