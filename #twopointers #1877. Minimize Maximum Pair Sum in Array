@@ -1,0 +1,20 @@
+
+#twopointers
+#1877. Minimize Maximum Pair Sum in Array
+class Solution:
+    def minPairSum(self, nums: List[int]) -> int:
+        nums.sort()
+        maxans=0
+        left=0
+        right=len(nums)-1
+        while left <= right:
+            ans=nums[left]+nums[right]
+            maxans=max(maxans,ans)
+            left+=1
+            right-=1
+        return maxans
+# test case
+Input: nums = [3,5,2,3]
+Output: 7
+Explanation: The elements can be paired up into pairs (3,3) and (5,2).
+The maximum pair sum is max(3+3, 5+2) = max(6, 7) = 7.
