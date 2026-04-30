@@ -1,0 +1,19 @@
+
+#prefix sum
+#3432. Count Partitions with Even Sum Difference
+
+
+class Solution:
+    def countPartitions(self, nums: List[int]) -> int:
+        
+        li=[]
+        n=len(nums)
+        total=sum(nums)
+        prefix=0
+        for i in range(n-1):
+            prefix=prefix + nums[i]
+
+            x=prefix-(total-prefix)
+            if x%2==0:
+                li.append(x)
+        return len(li)
