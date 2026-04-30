@@ -1,0 +1,19 @@
+
+#stiver arrays
+# Rigtht rotation
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        n=len(nums)
+        k = k % n
+           
+        nums[:] = nums[n-k:] + nums[:n-k]
+
+
+#test case
+Example 2:
+
+Input: nums = [-1,-100,3,99], k = 2
+Output: [3,99,-1,-100]
+Explanation: 
+rotate 1 steps to the right: [99,-1,-100,3]
+rotate 2 steps to the right: [3,99,-1,-100]
