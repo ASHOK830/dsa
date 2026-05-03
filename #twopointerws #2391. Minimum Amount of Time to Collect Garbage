@@ -33,3 +33,9 @@ class Solution:
             pickup += prefix[M-1]
 
         return pickup + traveltime
+
+#####explination 
+
+assume a  gadvan is moving is travel certain distance  it need petrol i mean if it travelm  3 km it need 3 liters ptrol that is traveral time 
+and each stop atleast one pick up as been takened so no.of pick ups * 1 liter petrol 
+now pickupspeterol +travelpetrol = total petrol
