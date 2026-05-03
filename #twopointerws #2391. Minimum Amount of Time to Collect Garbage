@@ -1,0 +1,35 @@
+#twopointerws
+#2391. Minimum Amount of Time to Collect Garbage
+
+class Solution:
+    def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:
+        prefix=[]
+        ans=0
+
+        for i in range(len(travel)):
+            ans=ans+travel[i]
+            prefix.append(ans)
+
+        G=-1
+        P=-1
+        M=-1
+        traveltime=0
+        for  i in range(len(garbage)):
+            traveltime+=len(garbage[i])
+    
+            if  "P" in garbage[i]:
+                P=i
+            if  "G" in garbage[i]: 
+                G=i
+            if  "M" in garbage[i]:
+                M=i
+        
+        pickup=0        
+        if P > 0:
+            pickup += prefix[P-1]
+        if G > 0:
+            pickup += prefix[G-1]
+        if M > 0:
+            pickup += prefix[M-1]
+
+        return pickup + traveltime
