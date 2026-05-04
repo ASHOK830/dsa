@@ -1,0 +1,15 @@
+#stiver
+#longest sub array length
+
+class Solution:
+    def longestSubarray(self, nums, k):
+        length = 0
+
+        for i in range(len(nums)):
+            s = 0
+            for j in range(i, len(nums)):
+                s += nums[j]
+                if s == k and length < (j - i + 1):
+                    length = j - i + 1
+
+        return length
