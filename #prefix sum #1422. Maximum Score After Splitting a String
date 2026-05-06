@@ -1,0 +1,23 @@
+
+#prefix sum
+#1422. Maximum Score After Splitting a String
+
+class Solution:
+    def maxScore(self, s: str) -> int:
+           
+            total=0
+            li=[]
+            for ch in s:
+                li.append(int(ch))
+
+            total=sum(li)        
+            ans=0
+            left=0
+            maxans=0
+            for i in range(len(li)-1):
+                if li[i]==0:
+                    left+=1
+                ans+=li[i]
+                right=total-ans
+                maxans=max(maxans,left+right)
+            return maxans
