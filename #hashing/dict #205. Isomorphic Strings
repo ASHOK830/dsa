@@ -1,0 +1,26 @@
+#hashing/dict
+#205. Isomorphic Strings
+
+           mapping={}
+            if len(s)!=len(t):
+                return False
+            
+            for i in range(len(s)):
+                org=s[i]
+                rep=t[i]
+                if org not in mapping:
+                    if rep not in mapping.values():
+                        mapping[org]=rep
+                    else:
+                        return False
+                    
+                else :
+                    if mapping[org]!=rep:
+                        return False
+            return True
+
+#test case  :
+
+ s = "paper", t = "title"
+
+
