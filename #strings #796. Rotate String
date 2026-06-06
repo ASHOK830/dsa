@@ -1,0 +1,21 @@
+#strings
+#796. Rotate String
+
+
+        if len(s)!=len(goal):
+            return False
+        w=s+s
+        if goal in w:
+            return True
+        else:
+           return  False
+
+
+#test case
+s=ashok
+goal=kasho
+
+
+#solution 
+word=s+s
+w=ashokashok
