@@ -10,10 +10,9 @@ class Solution:
         for i in range(len(li)):
             if li[i]=="(":
                 count+=1
-                max_count=max(max_count, count)# here i am finding the depth using count
-            if li[i]==")":
+            elif li[i]==")":
                 count-=1
-                max_count=max(max_count, count)
+        max_count=max(max_count, count)
         return max_count
 
 
