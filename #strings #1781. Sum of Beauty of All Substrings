@@ -1,0 +1,21 @@
+#strings
+#1781. Sum of Beauty of All Substrings
+        n = len(s)
+        ans = 0
+
+        for i in range(n):
+            freq = [0] * 26
+
+            for j in range(i, n):
+                freq[ord(s[j]) - ord('a')] += 1
+
+                mx = max(freq)
+                mn = float('inf')
+
+                for x in freq:
+                    if x > 0:
+                        mn = min(mn, x)
+
+                ans += mx - mn
+
+        return ans
