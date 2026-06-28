@@ -61,3 +61,44 @@ class Solution:
             ans=abs(nums[i]*nums[i])
             li.append(ans)
         return sorted(li)
+##### slidung window######
+####643. Maximum Average Subarray I
+
+        window=sum(nums[:k])
+        windo_max=window
+        for i in range(k,len(nums)):
+            window=window-nums[i-k]+nums[i]
+            windo_max=max(windo_max,window)
+        return windo_max/k
+
+######121. Best Time to Buy and Sell Stock
+li=[]
+for i in range(len(nums)):
+    for j in range(i,len(nums)):
+       
+        if nums[i] < nums[j]:
+            print(nums[i],nums[j])
+            li.append(nums[j]-nums[i])
+print(max(li,default=0))
+
+####1456. Maximum Number of Vowels in a Substring of Given Length
+class Solution:
+    def maxVowels(self, s: str, k: int) -> int:
+        
+        vol="aeiou"
+        count=0
+       
+        for i  in  range(k):
+            if s[i] in vol:
+                count+=1
+        max_cnt=count
+        for j in range(k, len(s)):
+            if s[j]  in vol:
+                count+=1
+           
+            if  s[j-k] in vol:
+                count-=1
+            
+            max_cnt=max(count, max_cnt)
+        return max_cnt
+            
