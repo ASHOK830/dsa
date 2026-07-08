@@ -101,4 +101,21 @@ class Solution:
             
             max_cnt=max(count, max_cnt)
         return max_cnt
+####febnoci series#ree
+def feb(n):
+    a,b=0,1
+    for i in range(n):
+        a,b=b,a+b
+    
+    return a
+    
+
+
+n=int(input())
+if n <=0:
+    print("invalid error")
+    
+else: 
+    print(feb(n))
+
             
